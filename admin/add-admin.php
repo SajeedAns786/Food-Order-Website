@@ -1,6 +1,7 @@
 <?php
 include ('partials/menu.php');
 ?>
+
 <div class="main-content">
     <div class="wrapper">
         <h1>Add Admin</h1>
@@ -44,9 +45,24 @@ include ('partials/footer.php');
 // Process the value from form and save it in databases
 // Check wheter the submit button is click or not
 if(isset($_POST['submit'])){
-   echo "Button clicked";
-}else{
-    echo "Button is not clicked";
+//    echo "Button clicked";
+   // Get the data from user 
+   $full_name = $_POST['full_name'];
+   $username = $_POST['username'];
+   $password = md5($_POST['password']);// Password encryption with md5 
+
+   //Sql Query to save the data into database 
+   $sql = "INSERT INTO tbt_admin SET 
+    full_name = '$full_name',
+    username ='$username',
+    password = '$password'
+   ";
+   
+ 
+   
+   //$res = mysqli_query($conn , $sql) or die(mysqli_error());
+
 }
+
 
 ?>
