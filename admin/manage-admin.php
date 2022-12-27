@@ -13,9 +13,29 @@ include('partials/menu.php');
         
         <?php
         if(isset($_SESSION['add'])){
-            
             echo $_SESSION['add']; //displaying session msg 
             unset($_SESSION['add']); // Removing session message
+        }
+
+        if(isset($_SESSION['delete'])){
+            echo $_SESSION['delete'];  
+            unset($_SESSION['delete']); 
+        }
+        if(isset($_SESSION['update'])){
+            echo $_SESSION['update'];  
+            unset($_SESSION['update']); 
+        }
+        if(isset($_SESSION['user-not-found'])){
+            echo $_SESSION['user-not-found'];  
+            unset($_SESSION['user-not-found']); 
+        }
+        if(isset($_SESSION['pwd-not-match'])){
+            echo $_SESSION['pwd-not-match'];  
+            unset($_SESSION['pwd-not-match']); 
+        }
+        if(isset($_SESSION['change-pwd'])){
+            echo $_SESSION['change-pwd'];  
+            unset($_SESSION['change-pwd']); 
         }
         ?>
          <br/><br/>
@@ -61,8 +81,9 @@ include('partials/menu.php');
                 <td><?php echo $full_name ; ?></td>
                 <td><?php echo $username ;?></td>
                 <td>
-                   <a href="#" class="btn-secondary">Update Admin</a>
-                   <a href="#" class="btn-danger">Delete Admin</a>
+                    <a href="<?php echo SITEURL ;?>admin/update-password.php?id=<?php echo $id ;?>" class = "btn-primary">Change password</a>
+                   <a href="<?php echo SITEURL ;?>admin/update-admin.php?id=<?php echo $id ;?>" class="btn-secondary">Update Admin</a>
+                   <a href="<?php echo SITEURL ;?>admin/delete-admin.php?id=<?php echo $id ;?>" class="btn-danger">Delete Admin</a>
                 </td>
             </tr>
 

@@ -75,7 +75,7 @@ if(isset($_POST['submit'])){
 
         // echo "Data inserted";
         //Creat a session variable to display message ;
-        $_SESSION['add'] = "Admin Added Successfuly";
+        $_SESSION['add'] = "<div class= 'success'>Admin Added Successfuly </div>";
         // redirect a page to manage admin 
         header('location:'.SITEURL.'admin/manage-admin.php');
 
