@@ -1,6 +1,11 @@
 <?php
 
+  // Start the session 
+  session_start();
+
+
  // Create constants to store non repeating values 
+ define('SITEURL', 'http://localhost/food-order/');
  define('LOCALHOST','localhost');
  define('DB_USERNAME','root');
  define('DB_PASSWORD','');

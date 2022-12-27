@@ -6,6 +6,14 @@ include ('partials/menu.php');
     <div class="wrapper">
         <h1>Add Admin</h1>
         <br/><br/>
+      <?php
+       if(isset($_SESSION['add'])){//Cheacking whether the session is set of not 
+            
+        echo $_SESSION['add']; //displaying session msg 
+        unset($_SESSION['add']); // Removing session message
+    }
+      ?>
+
         <form action="" method = "POST" >
 
         <table class="tbl-50">
@@ -52,15 +60,32 @@ if(isset($_POST['submit'])){
    $password = md5($_POST['password']);// Password encryption with md5 
 
    //Sql Query to save the data into database 
-   $sql = "INSERT INTO tbt_admin SET 
+   $sql = "INSERT INTO tbl_admin SET 
     full_name = '$full_name',
     username ='$username',
     password = '$password'
    ";
    
  
-   
-   //$res = mysqli_query($conn , $sql) or die(mysqli_error());
+   // Executing quring and savin data into database 
+   $res = mysqli_query($conn , $sql) or die(mysqli_error());
+
+   // Cheack whether the query is executed or not and display appropiate message
+   if($res == TRUE){
+
+        // echo "Data inserted";
+        //Creat a session variable to display message ;
+        $_SESSION['add'] = "Admin Added Successfuly";
+        // redirect a page to manage admin 
+        header('location:'.SITEURL.'admin/manage-admin.php');
+
+   }else{
+    // echo "fail to insert the data";
+    //Creat a session variable to display message ;
+    $_SESSION['add'] = "failed to add admin";
+    // redirect a page to add admin admin 
+    header('location:'.SITEURL.'admin/manage-admin.php');
+   }
 
 }
 
