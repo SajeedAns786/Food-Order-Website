@@ -20,6 +20,10 @@ include('../config/constants.php');
         echo $_SESSION['login'];  
         unset($_SESSION['login']); 
     }
+    if(isset($_SESSION['no-login-message'])){
+        echo $_SESSION['no-login-message'];  
+        unset($_SESSION['no-login-message']); 
+    }
     ?>
        <br><br>
     <form action="" method="POST" class= "text-center">
@@ -58,6 +62,10 @@ if(isset($_POST['submit'])){
     if($count == 1){
         // User available and login success
         $_SESSION['login'] = "<div class= 'success'> Login Successful. </div>";
+        
+        $_SESSION['user'] = $username ; 
+
+
         //Redirect to home page 
         header('location:' .SITEURL. 'admin/' );
     }else{
