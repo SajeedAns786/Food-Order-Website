@@ -1,22 +1,22 @@
-<?php 
+<?php
 include('partials/menu.php');
 ?>
 
 <div class="main-content">
     <div class="wrapper">
-    <h1>Manage category</h1>
-    <br/>
-        <br/>
-        
+        <h1>Manage category</h1>
+        <br />
+        <br />
 
-       <!-- Button to add admin -->
-       <a href="#" class="btn-primary">Add Category</a>
 
-       <br/>
-       <br/>
-       <br/>
-       
-       <table class = "tbl-full ">
+        <!-- Button to add admin -->
+        <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn-primary">Add Category</a>
+
+        <br />
+        <br />
+        <br />
+
+        <table class="tbl-full ">
             <tr>
                 <th>S.N.</th>
                 <th>Full Name</th>
@@ -28,8 +28,8 @@ include('partials/menu.php');
                 <td>Sajeed Ansari</td>
                 <td>Sajeedans791</td>
                 <td>
-                   <a href="#" class="btn-secondary">Update Admin</a>
-                   <a href="#" class="btn-danger">Delete Admin</a>
+                    <a href="#" class="btn-secondary">Update Admin</a>
+                    <a href="#" class="btn-danger">Delete Admin</a>
                 </td>
             </tr>
             <tr>
@@ -37,8 +37,8 @@ include('partials/menu.php');
                 <td>Sajeed Ansari</td>
                 <td>Sajeedans791</td>
                 <td>
-                <a href="#" class="btn-secondary">Update Admin</a>
-                   <a href="#" class="btn-danger">Delete Admin</a>
+                    <a href="#" class="btn-secondary">Update Admin</a>
+                    <a href="#" class="btn-danger">Delete Admin</a>
                 </td>
             </tr>
             <tr>
@@ -46,15 +46,15 @@ include('partials/menu.php');
                 <td>Sajeed Ansari</td>
                 <td>Sajeedans791</td>
                 <td>
-                <a href="#" class="btn-secondary">Update Admin</a>
-                   <a href="#" class="btn-danger">Delete Admin</a> 
+                    <a href="#" class="btn-secondary">Update Admin</a>
+                    <a href="#" class="btn-danger">Delete Admin</a>
                 </td>
             </tr>
         </table>
     </div>
-    
+
 </div>
-      
-<?php 
+
+<?php
 include('partials/footer.php');
 ?>
