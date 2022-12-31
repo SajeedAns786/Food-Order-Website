@@ -7,7 +7,15 @@ include('partials/menu.php');
         <h1>Manage category</h1>
         <br />
         <br />
-
+        <?php
+        if (isset($_SESSION['add'])) { //Cheacking whether the session is set of not 
+        
+            echo $_SESSION['add']; //displaying session msg 
+            unset($_SESSION['add']); // Removing session message
+        }
+        ?>
+        <br />
+        <br />
 
         <!-- Button to add admin -->
         <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn-primary">Add Category</a>
